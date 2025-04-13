@@ -1,4 +1,4 @@
-import { View, Text, Image, Pressable, ActivityIndicator } from 'react-native'
+import { View, Text, Image, Pressable, ActivityIndicator, FlatList } from 'react-native'
 import React, { useContext, useEffect, useState } from 'react'
 import { useLocalSearchParams, useRouter } from 'expo-router'
 import { PraticeOption } from '../../../constant/Option';
@@ -42,44 +42,50 @@ export default function PraticeTypeHomeScreen() {
     }
 
   return (
-    <View>
-      <Image source={option.image} style={{
-        height: 200,
-        width: '100%'
-      }} />
-      <View style={{
-        position: 'absolute',
-        padding: 10,
-        display: 'flex',
-        flexDirection: 'row',
-        gap: 10,
-        alignItems: 'center'
-      }}>
-        <Pressable onPress={() => router.back()}>
-            <Ionicons name='arrow-back' size={24} color="black" 
-                style={{
-                    backgroundColor: Colors.WHITE,
-                    padding: 8,
-                    borderRadius: 10
-                }}
-            />
-        </Pressable>
-        <Text style={{
-            fontFamily: 'outfit-bold',
-            fontSize: 35,
-            color: Colors.WHITE
-        }}>{type}</Text>
-      </View>
+    <FlatList
+      data={[]}
+      renderItem={() => null}
+      ListHeaderComponent={
+        <View>
+          <Image source={option.image} style={{
+            height: 200,
+            width: '100%'
+          }} />
+          <View style={{
+            position: 'absolute',
+            padding: 10,
+            display: 'flex',
+            flexDirection: 'row',
+            gap: 10,
+            alignItems: 'center'
+          }}>
+            <Pressable onPress={() => router.back()}>
+                <Ionicons name='arrow-back' size={24} color="black" 
+                    style={{
+                        backgroundColor: Colors.WHITE,
+                        padding: 8,
+                        borderRadius: 10
+                    }}
+                />
+            </Pressable>
+            <Text style={{
+                fontFamily: 'outfit-bold',
+                fontSize: 35,
+                color: Colors.WHITE
+            }}>{type}</Text>
+          </View>
 
-      {loading && <ActivityIndicator size={'large'}
-      style={{
-        marginTop: 150
-      }}
-        color={Colors.PRIMARY} />}
+          {loading && <ActivityIndicator size={'large'}
+          style={{
+            marginTop: 150
+          }}
+            color={Colors.PRIMARY} />}
 
-      <CourseListGrid courseList={courseList} 
-        option={option}
-      />
-    </View>
+          <CourseListGrid courseList={courseList} 
+            option={option}
+          />
+        </View>
+      }
+    />
   )
 }

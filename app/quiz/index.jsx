@@ -59,11 +59,12 @@ export default function Quiz() {
 
   return (
     <View>
-      <Image source={require('./../../assets/images/wave.png')} 
+      <Image source={require('./../../assets/images/quizz.png')} 
         style={{
-            height: 800,
+            height: '100%',
             width: '100%'
         }}
+        blurRadius={5}
       />
       <View style={{
         position: 'absolute',
