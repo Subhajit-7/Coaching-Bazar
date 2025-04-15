@@ -1,4 +1,4 @@
-import { View, Text, Dimensions, StyleSheet } from 'react-native'
+import { View, Text, Dimensions, StyleSheet, ScrollView } from 'react-native'
 import React, { useState } from 'react'
 import { useLocalSearchParams, useRouter } from 'expo-router'
 import * as Progress from 'react-native-progress'
@@ -40,7 +40,7 @@ export default function ChapterView() {
       <Progress.Bar progress={GetProgress(currentPage)} 
         width={Dimensions.get('screen').width * 0.85} />
 
-      <View style={{
+      <ScrollView style={{
         marginTop: 20
       }}>
         <Text style={{
@@ -79,7 +79,7 @@ export default function ChapterView() {
           </>
         }
 
-      </View>
+      </ScrollView>
 
         <View style={{
           position: 'absolute',

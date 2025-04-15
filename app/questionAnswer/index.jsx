@@ -33,7 +33,7 @@ export default function QuestionAnswer() {
         position: 'absolute',
         width: '100%',
         padding: 20,
-        height: 800
+        height: '100%'
       }}>
         <View style={{
           display: 'flex',
