@@ -45,6 +45,7 @@ export default function SignUp() {
       if (!existingUser.exists()) {
         await setDoc(doc(db, 'users', email), data);
         setUserDetail(data);
+        router.replace('/(tabs)/home');
       }
     }
 
