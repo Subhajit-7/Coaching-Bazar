@@ -92,7 +92,7 @@ export default function AddCourse() {
     <ScrollView style={{
       padding: 25,
       backgroundColor: Colors.WHITE,
-      flex: 1
+      height: '100%'
     }}>
       <Text style={{
         fontFamily: 'outfit-bold',
